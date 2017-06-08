@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Location implements Serializable{
 	
+	@SerializedName("postalCode")
+	public String postalCode;
 	@SerializedName("lat")
 	public double latitude;
 	@SerializedName("lng")
@@ -15,8 +17,9 @@ public class Location implements Serializable{
 		super();
 	}
 	
-	public Location(double latitude, double longitude) {
+	public Location(String postalCode,double latitude, double longitude) {
 		super();
+		this.postalCode = postalCode;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}

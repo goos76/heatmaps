@@ -22,6 +22,11 @@ public class ServiceTest {
 		assertNotNull(location);
 	}
 	@Test
+	public void testGetLocationNotInDatabase() {
+		Location location = service.getLocation("4811TT");
+		assertNotNull(location);
+	}
+	@Test
 	public void testCsv() {
 		List<Customer> customers = service.parseCsv();
 		assertFalse(customers.isEmpty());

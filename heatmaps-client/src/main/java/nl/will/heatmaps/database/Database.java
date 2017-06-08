@@ -32,12 +32,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import nl.will.heatmaps.model.Customer;
+import nl.will.heatmaps.model.Location;
 
 public class Database {
 
 	private static final String CUSTOMERS = "customers";
 	private static final String DATABASE_URL = "https://heatmaps-168813.firebaseio.com/";
 	private static final Database INSTANCE = new Database();
+	private static final String POSTAL_CODES = "postalcodes";
 
 	private DatabaseReference database;
 
@@ -78,6 +80,7 @@ public class Database {
 						Iterable<DataSnapshot> children = found.getChildren();
 						for (DataSnapshot customerSnapshot : children) {
 							response.customers.add(customerSnapshot.getValue(Customer.class));
+
 						}
 
 					}
@@ -167,6 +170,33 @@ public class Database {
 		return response.customer;
 	}
 
+	public Location selectLocation(String postalCode) {
+
+		Response response = new Response();
+		ValueEventListener listener = new ValueEventListener() {
+
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				Location location = dataSnapshot.child("location").getValue(Location.class);
+				response.location = location;
+				response.setDone();
+
+			}
+
+			@Override
+			public void onCancelled(DatabaseError error) {
+				throw new RuntimeException("database error" + error);
+
+			}
+		};
+		DatabaseReference postalCodes = database.child(POSTAL_CODES).child(postalCode);
+		postalCodes.addListenerForSingleValueEvent(listener);
+
+		response.waitForResponse();
+
+		return response.location;
+	}
+
 	public String store(Customer customer) {
 		String key = customer.id;
 		if (StringUtils.isEmpty(customer.id)) {
@@ -188,12 +218,36 @@ public class Database {
 		};
 		DatabaseReference customers = getBasePath(customer).child(key);
 		customers.setValue(customer, listener);
-		customers.child("location").setValue(customer.location);
+
+		store(customer.location);
 
 		database.push();
 		response.waitForResponse();
 
 		return key;
+
+	}
+
+	public void store(Location location) {
+
+		Response response = new Response();
+		CompletionListener listener = new CompletionListener() {
+
+			@Override
+			public void onComplete(DatabaseError error, DatabaseReference databaseReference) {
+				if (error != null) {
+					throw new RuntimeException("database error" + error);
+				}
+				response.setDone();
+
+			}
+		};
+		DatabaseReference postalCodes = database.child(POSTAL_CODES).child(location.postalCode);
+
+		postalCodes.child("location").setValue(location, listener);
+
+		database.push();
+		response.waitForResponse();
 
 	}
 
@@ -241,6 +295,7 @@ public class Database {
 	}
 
 	private class Response {
+		protected Location location;
 		Customer customer;
 		List<Customer> customers = new ArrayList<>();
 		AtomicBoolean done = new AtomicBoolean(false);

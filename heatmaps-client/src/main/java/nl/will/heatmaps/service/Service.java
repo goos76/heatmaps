@@ -27,12 +27,12 @@ import nl.will.heatmaps.model.Customer;
 import nl.will.heatmaps.model.Location;
 
 public class Service {
-	private static final String POSTCODE_CSV = "/postcodes100.csv";
+	private static final String POSTCODE_CSV = "/postcodesAll.csv";
 	private static final Logger LOG = Logger.getLogger(Service.class);
 
 	private static final Service INSTANCE = new Service();
 
-	private static final String API_KEY = "AIzaSyDRaHffz_Advs4_dgputC67P5roDUEoBIA";
+	private static final String API_KEY = "AIzaSyDytBBZ23RuJZBvWzEjatQTNm4geyDQygA";
 
 	private ArrayList<Customer> customers = new ArrayList<>();
 	private Database database = Database.instance();
@@ -57,8 +57,8 @@ public class Service {
 				String ageAsString = record.get(4);
 				Customer customer = new Customer(postalCode, Integer.parseInt(StringUtils.remove(ageAsString, " jaar")),
 						insuranceType);
-				// Location location = getLocation(postalCode);
-				customer.location = new Location(1, 1);
+				Location location = getLocation(postalCode);
+				customer.location = location;
 
 				customers.add(customer);
 				database.store(customer);
@@ -75,6 +75,24 @@ public class Service {
 	}
 
 	Location getLocation(String postalCode) {
+		Location location = database.selectLocation(postalCode);
+		if (location == null) {
+			location = getGeoLocation(postalCode);
+			if (location != null) {
+				location.postalCode = postalCode;
+				database.store(location);
+			}
+		}
+		return location;
+
+	}
+
+	public List<Customer> heatmaps() {
+		return database.selectCustomers();
+
+	}
+
+	private Location getGeoLocation(String postalCode) {
 		try (CloseableHttpClient client = HttpClients.createDefault()) {
 			HttpGet httpGet = new HttpGet(
 					"https://maps.googleapis.com/maps/api/geocode/json?address=" + postalCode + "&key=" + API_KEY);
@@ -99,11 +117,6 @@ public class Service {
 			LOG.warn("error", e);
 			return null;
 		}
-	}
-
-	public List<Customer> heatmaps() {
-		return database.selectCustomers();
-
 	}
 
 }

@@ -22,7 +22,7 @@ public class DatabaseTest {
 	@Test
 	public void testStore() {
 		customer = new Customer("4811AT", 12, "Basis");
-		customer.location = new Location(1, 1);
+		customer.location = new Location(customer.postalCode,1, 1);
 		String id = database.store(customer);
 		assertNotNull(id);
 	}
@@ -51,6 +51,16 @@ public class DatabaseTest {
 		customer = database.selectCustomer(customer);
 		assertNotNull(customer);
 		assertEquals("4811AT", customer.postalCode);
+
+	}
+	@Test
+	public void testSelectLocation() {
+
+		testStore();
+		Location location = database.selectLocation(customer.postalCode);
+		assertNotNull(location);
+		assertEquals("4811AT", location.postalCode);
+		assertEquals(Double.valueOf(1.0), Double.valueOf(location.latitude));
 
 	}
 
