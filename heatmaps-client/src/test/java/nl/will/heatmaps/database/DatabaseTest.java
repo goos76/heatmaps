@@ -1,6 +1,9 @@
 package nl.will.heatmaps.database;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -13,18 +16,28 @@ import nl.will.heatmaps.model.Location;
 public class DatabaseTest {
 	private Database database = Database.instance();
 	private Customer customer;
-	
+
 	@Before
-	public void setUp(){
+	public void setUp() {
 		database.deleteAll();
 	}
 
 	@Test
 	public void testStore() {
+
 		customer = new Customer("4811AT", 12, "Basis");
-		customer.location = new Location(customer.postalCode,1, 1);
+		customer.location = new Location(customer.postalCode, 1, 1);
 		String id = database.store(customer);
 		assertNotNull(id);
+	}
+
+	@Test
+	public void testStore2() {
+		testStore();
+		testStore();
+		List<Customer> customers = database.selectCustomers();
+		assertTrue(customers.size() == 2);
+
 	}
 
 	@Test
@@ -35,6 +48,7 @@ public class DatabaseTest {
 		assertTrue(customers.size() > 0);
 
 	}
+
 	@Test
 	public void testSelectCustomersByPostalcode() {
 
@@ -53,6 +67,7 @@ public class DatabaseTest {
 		assertEquals("4811AT", customer.postalCode);
 
 	}
+
 	@Test
 	public void testSelectLocation() {
 
@@ -60,7 +75,15 @@ public class DatabaseTest {
 		Location location = database.selectLocation(customer.postalCode);
 		assertNotNull(location);
 		assertEquals("4811AT", location.postalCode);
-		assertEquals(Double.valueOf(1.0), Double.valueOf(location.latitude));
+		assertEquals(Double.valueOf(1.0), Double.valueOf(location.lat));
+
+	}
+
+	@Test
+	public void testSelectLocations() {
+
+		List<Location> locations = database.selectLocations();
+		assertTrue(!locations.isEmpty());
 
 	}
 
@@ -71,9 +94,9 @@ public class DatabaseTest {
 		customer = database.selectCustomer(customer);
 		assertNotNull(customer);
 		assertEquals("4811AT", customer.postalCode);
-		
+
 		database.delete(customer);
-		
+
 		customer = database.selectCustomer(customer);
 		assertNull(customer);
 

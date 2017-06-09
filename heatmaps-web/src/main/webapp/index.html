@@ -53,24 +53,26 @@ html, body {
 
 
 	<script>
-// 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnIBrn08V-KN7w_4XEB2VNJvnvi-nOzcQ&libraries=visualization">
 		var map, heatmap;
 
 		function initMap() {
 			map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 8,
 				center : {
-					lat : 52.1326,
-					lng : 5.2913
+					lat : 52.2789,
+					lng : 5.6658
 				},
 				mapTypeId : 'satellite'
 			});
 
 			heatmap = new google.maps.visualization.HeatmapLayer({
 				data : getPoints(),
+				dissipating : true,
+				maxIntensity: 25,
+				radius : 30,
 				map : map
 			});
-			
+
 		}
 
 		function toggleHeatmap() {
@@ -96,24 +98,32 @@ html, body {
 			heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
 		}
 		function getResults() {
-		    var xhttp = new XMLHttpRequest();
-		    xhttp.open("GET", "http://localhost:8080/heatmaps-web/rest/service/results", false);
-		    xhttp.setRequestHeader("Content-type", "application/json");
-		    xhttp.send();
-		    var response = JSON.parse(xhttp.responseText);
-		    return response;
+			var xhttp = new XMLHttpRequest();
+			xhttp
+					.open(
+							"GET",
+							"http://localhost:8080/heatmaps-web/rest/service/locations",
+							false);
+			xhttp.setRequestHeader("Content-type", "application/json");
+			xhttp.send();
+			var response = JSON.parse(xhttp.responseText);
+			return response;
 		}
 
 		// Heatmap data: 500 Points
 		function getPoints() {
-				
+
 			var locations = [];
 			var json = getResults();
-			for ( var index in json.customers) {
-				var customer = json.customers[index];
-				locations.push( new google.maps.LatLng(customer.location.lat, customer.location.lng));
-				
-			} 		
+			for ( var index in json.locations) {
+				var location = json.locations[index];
+				locations.push({
+					location : new google.maps.LatLng(location.lat,
+							location.lng),
+					weight : location.weight
+				});
+
+			}
 			return locations;
 		}
 	</script>

@@ -7,6 +7,7 @@ public class HeatmapsResult {
 
 	public String status;
 	public List<Customer> customers = new ArrayList<>();
+	public List<Location> locations = new ArrayList<>();
 	
 	
 

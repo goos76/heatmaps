@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -105,6 +103,46 @@ public class Database {
 			throw new RuntimeException("selectFeatures failed", e);
 		}
 
+	}
+
+	public List<Location> selectLocations() {
+		try {
+			Response response = new Response();
+			ValueEventListener listener = new ValueEventListener() {
+
+				@Override
+				public void onDataChange(DataSnapshot dataSnapshot) {
+
+					Iterable<DataSnapshot> featuresFound = dataSnapshot.getChildren();
+					for (DataSnapshot found : featuresFound) {
+						Iterable<DataSnapshot> children = found.getChildren();
+						for (DataSnapshot customerSnapshot : children) {
+							Location location = customerSnapshot.getValue(Location.class);
+							response.locations.add(location);
+
+						}
+
+					}
+
+					response.setDone();
+
+				}
+
+				@Override
+				public void onCancelled(DatabaseError error) {
+					throw new RuntimeException("database error" + error);
+
+				}
+			};
+			DatabaseReference locations = database.child(POSTAL_CODES);
+			locations.addListenerForSingleValueEvent(listener);
+
+			response.waitForResponse();
+
+			return response.locations;
+		} catch (Exception e) {
+			throw new RuntimeException("selectFeatures failed", e);
+		}
 	}
 
 	public List<Customer> selectCustomers(String postalcode) {
@@ -198,11 +236,11 @@ public class Database {
 	}
 
 	public String store(Customer customer) {
-		String key = customer.id;
-		if (StringUtils.isEmpty(customer.id)) {
-			key = database.push().getKey();
-			customer.id = key;
-		}
+		// String key = customer.id;
+		// if (StringUtils.isEmpty(customer.id)) {
+		// key = database.push().getKey();
+		// customer.id = key;
+		// }
 
 		Response response = new Response();
 		CompletionListener listener = new CompletionListener() {
@@ -216,7 +254,7 @@ public class Database {
 
 			}
 		};
-		DatabaseReference customers = getBasePath(customer).child(key);
+		DatabaseReference customers = getBasePath(customer).child(customer.id);
 		customers.setValue(customer, listener);
 
 		store(customer.location);
@@ -224,7 +262,7 @@ public class Database {
 		database.push();
 		response.waitForResponse();
 
-		return key;
+		return customer.id;
 
 	}
 
@@ -270,7 +308,7 @@ public class Database {
 
 	}
 
-	void deleteAll() {
+	public void deleteAll() {
 		Response response = new Response();
 		CompletionListener listener = new CompletionListener() {
 
@@ -295,9 +333,12 @@ public class Database {
 	}
 
 	private class Response {
-		protected Location location;
+		List<Location> locations = new ArrayList<>();
+		Location location;
+
 		Customer customer;
 		List<Customer> customers = new ArrayList<>();
+
 		AtomicBoolean done = new AtomicBoolean(false);
 
 		Response() {

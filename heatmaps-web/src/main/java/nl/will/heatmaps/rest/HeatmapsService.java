@@ -11,11 +11,12 @@ import com.google.gson.Gson;
 
 import nl.will.heatmaps.model.Customer;
 import nl.will.heatmaps.model.HeatmapsResult;
+import nl.will.heatmaps.model.Location;
 import nl.will.heatmaps.service.Service;
 
 @Path("/service")
 public class HeatmapsService {
-	private Service service = Service.instance(); 
+	private Service service = Service.instance();
 
 	@GET
 	@Path("/results")
@@ -32,15 +33,15 @@ public class HeatmapsService {
 	}
 
 	@GET
-	@Path("/csv")
+	@Path("/locations")
 	@Produces("application/json")
-	public Response csv() {
+	public Response locations() {
 
-		service.parseCsv();
+		List<Location> locations = service.locations();
+		HeatmapsResult heatmapsResult = new HeatmapsResult();
+		heatmapsResult.locations = locations;
 
 		Gson gson = new Gson();
-		HeatmapsResult heatmapsResult = new HeatmapsResult();
-		heatmapsResult.status = "ok";
 		String result = gson.toJson(heatmapsResult);
 		return Response.status(Response.Status.OK).entity(result).build();
 	}

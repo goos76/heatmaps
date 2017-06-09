@@ -1,0 +1,730 @@
+{
+  "6823NV": {
+    "1": {
+      "id": "1",
+      "postalCode": "6823NV",
+      "age": 60,
+      "insuranceType": "NASELECT",
+      "location": {
+        "postalCode": "6823NV",
+        "lat": 52.0060557,
+        "lng": 5.9457631,
+        "weight": 0
+      }
+    }
+  },
+  "4902NA": {
+    "2": {
+      "id": "2",
+      "postalCode": "4902NA",
+      "age": 90,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4902NA",
+        "lat": 51.6416459,
+        "lng": 4.846287200000001,
+        "weight": 0
+      }
+    }
+  },
+  "4921EB": {
+    "4": {
+      "id": "4",
+      "postalCode": "4921EB",
+      "age": 85,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4921EB",
+        "lat": 51.6736614,
+        "lng": 4.786803799999999,
+        "weight": 0
+      }
+    }
+  },
+  "4901HE": {
+    "8": {
+      "id": "8",
+      "postalCode": "4901HE",
+      "age": 75,
+      "insuranceType": "CZDIRECT",
+      "location": {
+        "postalCode": "4901HE",
+        "lat": 51.6435348,
+        "lng": 4.8623591,
+        "weight": 0
+      }
+    }
+  },
+  "4681AC": {
+    "9": {
+      "id": "9",
+      "postalCode": "4681AC",
+      "age": 80,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4681AC",
+        "lat": 51.587553,
+        "lng": 4.2181824,
+        "weight": 0
+      }
+    }
+  },
+  "4697EM": {
+    "10": {
+      "id": "10",
+      "postalCode": "4697EM",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4697EM",
+        "lat": 51.6020117,
+        "lng": 4.1053,
+        "weight": 0
+      }
+    }
+  },
+  "4651TD": {
+    "11": {
+      "id": "11",
+      "postalCode": "4651TD",
+      "age": 65,
+      "insuranceType": "RESTITUT",
+      "location": {
+        "postalCode": "4651TD",
+        "lat": 51.5801656,
+        "lng": 4.3427872,
+        "weight": 0
+      }
+    }
+  },
+  "4614RX": {
+    "13": {
+      "id": "13",
+      "postalCode": "4614RX",
+      "age": 80,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4614RX",
+        "lat": 51.5091084,
+        "lng": 4.3007273,
+        "weight": 0
+      }
+    }
+  },
+  "4615KX": {
+    "15": {
+      "id": "15",
+      "postalCode": "4615KX",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4615KX",
+        "lat": 51.4834718,
+        "lng": 4.2873882,
+        "weight": 0
+      }
+    }
+  },
+  "4725AL": {
+    "16": {
+      "id": "16",
+      "postalCode": "4725AL",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4725AL",
+        "lat": 51.484198,
+        "lng": 4.389234099999999,
+        "weight": 0
+      }
+    }
+  },
+  "5121RX": {
+    "23": {
+      "id": "23",
+      "postalCode": "5121RX",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "5121RX",
+        "lat": 51.5955135,
+        "lng": 4.923183499999999,
+        "weight": 0
+      }
+    }
+  },
+  "4871KK": {
+    "24": {
+      "id": "24",
+      "postalCode": "4871KK",
+      "age": 85,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4871KK",
+        "lat": 51.58853389999999,
+        "lng": 4.659458799999999,
+        "weight": 0
+      }
+    }
+  },
+  "4871JA": {
+    "25": {
+      "id": "25",
+      "postalCode": "4871JA",
+      "age": 70,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4871JA",
+        "lat": 51.59050629999999,
+        "lng": 4.6528756,
+        "weight": 0
+      }
+    }
+  },
+  "4761BN": {
+    "27": {
+      "id": "27",
+      "postalCode": "4761BN",
+      "age": 70,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4761BN",
+        "lat": 51.6433626,
+        "lng": 4.6059453,
+        "weight": 0
+      }
+    }
+  },
+  "4875CX": {
+    "31": {
+      "id": "31",
+      "postalCode": "4875CX",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4875CX",
+        "lat": 51.5734194,
+        "lng": 4.630475199999999,
+        "weight": 0
+      }
+    }
+  },
+  "4904PX": {
+    "33": {
+      "id": "33",
+      "postalCode": "4904PX",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4904PX",
+        "lat": 51.627282,
+        "lng": 4.8521633,
+        "weight": 0
+      }
+    }
+  },
+  "4715BK": {
+    "34": {
+      "id": "34",
+      "postalCode": "4715BK",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4715BK",
+        "lat": 51.5362517,
+        "lng": 4.561663300000001,
+        "weight": 0
+      }
+    }
+  },
+  "4876NH": {
+    "35": {
+      "id": "35",
+      "postalCode": "4876NH",
+      "age": 70,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4876NH",
+        "lat": 51.5584862,
+        "lng": 4.6469185,
+        "weight": 0
+      }
+    }
+  },
+  "4711CZ": {
+    "38": {
+      "id": "38",
+      "postalCode": "4711CZ",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4711CZ",
+        "lat": 51.5530677,
+        "lng": 4.5858557,
+        "weight": 0
+      }
+    }
+  },
+  "2907TJ": {
+    "43": {
+      "id": "43",
+      "postalCode": "2907TJ",
+      "age": 55,
+      "insuranceType": "NASELECT",
+      "location": {
+        "postalCode": "2907TJ",
+        "lat": 51.9493081,
+        "lng": 4.570895699999999,
+        "weight": 0
+      }
+    }
+  },
+  "4827CR": {
+    "44": {
+      "id": "44",
+      "postalCode": "4827CR",
+      "age": 80,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4827CR",
+        "lat": 51.60952349999999,
+        "lng": 4.7914355,
+        "weight": 0
+      }
+    }
+  },
+  "4904CL": {
+    "47": {
+      "id": "47",
+      "postalCode": "4904CL",
+      "age": 85,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4904CL",
+        "lat": 51.6261502,
+        "lng": 4.864264599999999,
+        "weight": 0
+      }
+    }
+  },
+  "4817ET": {
+    "48": {
+      "id": "48",
+      "postalCode": "4817ET",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4817ET",
+        "lat": 51.59042909999999,
+        "lng": 4.8052798,
+        "weight": 0
+      }
+    }
+  },
+  "4819CL": {
+    "49": {
+      "id": "49",
+      "postalCode": "4819CL",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4819CL",
+        "lat": 51.5775422,
+        "lng": 4.7690901,
+        "weight": 0
+      }
+    }
+  },
+  "4817KH": {
+    "51": {
+      "id": "51",
+      "postalCode": "4817KH",
+      "age": 70,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4817KH",
+        "lat": 51.5911903,
+        "lng": 4.799324599999999,
+        "weight": 0
+      }
+    }
+  },
+  "4901AC": {
+    "55": {
+      "id": "55",
+      "postalCode": "4901AC",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4901AC",
+        "lat": 51.65182249999999,
+        "lng": 4.8583905,
+        "weight": 0
+      }
+    }
+  },
+  "4871SB": {
+    "56": {
+      "id": "56",
+      "postalCode": "4871SB",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4871SB",
+        "lat": 51.5780739,
+        "lng": 4.6470463,
+        "weight": 0
+      }
+    }
+  },
+  "4715RG": {
+    "58": {
+      "id": "58",
+      "postalCode": "4715RG",
+      "age": 65,
+      "insuranceType": "NASELECT",
+      "location": {
+        "postalCode": "4715RG",
+        "lat": 51.5358362,
+        "lng": 4.572913499999999,
+        "weight": 0
+      }
+    }
+  },
+  "4812GK": {
+    "64": {
+      "id": "64",
+      "postalCode": "4812GK",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4812GK",
+        "lat": 51.5737523,
+        "lng": 4.7545865,
+        "weight": 0
+      }
+    }
+  },
+  "4724EW": {
+    "67": {
+      "id": "67",
+      "postalCode": "4724EW",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4724EW",
+        "lat": 51.5230803,
+        "lng": 4.3928477,
+        "weight": 0
+      }
+    }
+  },
+  "4854KN": {
+    "68": {
+      "id": "68",
+      "postalCode": "4854KN",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4854KN",
+        "lat": 51.5667945,
+        "lng": 4.8342847,
+        "weight": 0
+      }
+    }
+  },
+  "4715BR": {
+    "72": {
+      "id": "72",
+      "postalCode": "4715BR",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4715BR",
+        "lat": 51.53480159999999,
+        "lng": 4.5625256,
+        "weight": 0
+      }
+    }
+  },
+  "4902CT": {
+    "73": {
+      "id": "73",
+      "postalCode": "4902CT",
+      "age": 60,
+      "insuranceType": "CZDIRECT",
+      "location": {
+        "postalCode": "4902CT",
+        "lat": 51.64113589999999,
+        "lng": 4.840976899999999,
+        "weight": 0
+      }
+    }
+  },
+  "4741RG": {
+    "75": {
+      "id": "75",
+      "postalCode": "4741RG",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4741RG",
+        "lat": 51.5864804,
+        "lng": 4.5846453,
+        "weight": 0
+      }
+    }
+  },
+  "4708KM": {
+    "76": {
+      "id": "76",
+      "postalCode": "4708KM",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4708KM",
+        "lat": 51.5131639,
+        "lng": 4.431458399999999,
+        "weight": 0
+      }
+    }
+  },
+  "3222BD": {
+    "77": {
+      "id": "77",
+      "postalCode": "3222BD",
+      "age": 45,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3222BD",
+        "lat": 51.835443,
+        "lng": 4.124636000000001,
+        "weight": 0
+      }
+    }
+  },
+  "6043BM": {
+    "78": {
+      "id": "78",
+      "postalCode": "6043BM",
+      "age": 45,
+      "insuranceType": "CZDIRECT",
+      "location": {
+        "postalCode": "6043BM",
+        "lat": 51.1887652,
+        "lng": 5.9959487,
+        "weight": 0
+      }
+    }
+  },
+  "3192GJ": {
+    "81": {
+      "id": "81",
+      "postalCode": "3192GJ",
+      "age": 45,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3192GJ",
+        "lat": 51.8531992,
+        "lng": 4.3671603,
+        "weight": 0
+      }
+    }
+  },
+  "3332KK": {
+    "82": {
+      "id": "82",
+      "postalCode": "3332KK",
+      "age": 40,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3332KK",
+        "lat": 51.8259814,
+        "lng": 4.6464743,
+        "weight": 0
+      }
+    }
+  },
+  "3291TK": {
+    "91": {
+      "id": "91",
+      "postalCode": "3291TK",
+      "age": 80,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3291TK",
+        "lat": 51.74425429999999,
+        "lng": 4.5563878,
+        "weight": 0
+      }
+    }
+  },
+  "3075BH": {
+    "95": {
+      "id": "95",
+      "postalCode": "3075BH",
+      "age": 40,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3075BH",
+        "lat": 51.8798161,
+        "lng": 4.5072937,
+        "weight": 0
+      }
+    }
+  },
+  "4721BA": {
+    "99": {
+      "id": "99",
+      "postalCode": "4721BA",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4721BA",
+        "lat": 51.5005524,
+        "lng": 4.5598484,
+        "weight": 0
+      }
+    }
+  },
+  "4876AS": {
+    "100": {
+      "id": "100",
+      "postalCode": "4876AS",
+      "age": 85,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4876AS",
+        "lat": 51.56244410000001,
+        "lng": 4.6431042,
+        "weight": 0
+      }
+    }
+  },
+  "3077MJ": {
+    "101": {
+      "id": "101",
+      "postalCode": "3077MJ",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3077MJ",
+        "lat": 51.8974661,
+        "lng": 4.5249504,
+        "weight": 0
+      }
+    }
+  },
+  "2985XE": {
+    "105": {
+      "id": "105",
+      "postalCode": "2985XE",
+      "age": 40,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "2985XE",
+        "lat": 51.8664903,
+        "lng": 4.6057926,
+        "weight": 0
+      }
+    }
+  },
+  "4921HT": {
+    "106": {
+      "id": "106",
+      "postalCode": "4921HT",
+      "age": 75,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4921HT",
+        "lat": 51.67632589999999,
+        "lng": 4.7857853,
+        "weight": 0
+      }
+    }
+  },
+  "5111AL": {
+    "107": {
+      "id": "107",
+      "postalCode": "5111AL",
+      "age": 65,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "5111AL",
+        "lat": 51.4489663,
+        "lng": 4.9313802,
+        "weight": 0
+      }
+    }
+  },
+  "4817SK": {
+    "108": {
+      "id": "108",
+      "postalCode": "4817SK",
+      "age": 70,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4817SK",
+        "lat": 51.58603979999999,
+        "lng": 4.8230697,
+        "weight": 0
+      }
+    }
+  },
+  "4711PT": {
+    "109": {
+      "id": "109",
+      "postalCode": "4711PT",
+      "age": 55,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4711PT",
+        "lat": 51.55003180000001,
+        "lng": 4.5954396,
+        "weight": 0
+      }
+    }
+  },
+  "4661HD": {
+    "112": {
+      "id": "112",
+      "postalCode": "4661HD",
+      "age": 60,
+      "insuranceType": "RESTITUT",
+      "location": {
+        "postalCode": "4661HD",
+        "lat": 51.5232918,
+        "lng": 4.2700406,
+        "weight": 0
+      }
+    }
+  },
+  "4904VT": {
+    "114": {
+      "id": "114",
+      "postalCode": "4904VT",
+      "age": 60,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "4904VT",
+        "lat": 51.6435749,
+        "lng": 4.8377979,
+        "weight": 0
+      }
+    }
+  },
+  "3245VP": {
+    "115": {
+      "id": "115",
+      "postalCode": "3245VP",
+      "age": 85,
+      "insuranceType": "NATURA",
+      "location": {
+        "postalCode": "3245VP",
+        "lat": 51.7519532,
+        "lng": 4.1510714,
+        "weight": 0
+      }
+    }
+  }
+}

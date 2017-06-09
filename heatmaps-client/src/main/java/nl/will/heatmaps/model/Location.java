@@ -2,25 +2,24 @@ package nl.will.heatmaps.model;
 
 import java.io.Serializable;
 
-import com.google.gson.annotations.SerializedName;
+public class Location implements Serializable {
 
-public class Location implements Serializable{
-	
-	@SerializedName("postalCode")
 	public String postalCode;
-	@SerializedName("lat")
-	public double latitude;
-	@SerializedName("lng")
-	public double longitude;
-	
-	public Location(){
+
+	public double lat;
+
+	public double lng;
+
+	public int weight;
+
+	public Location() {
 		super();
 	}
-	
-	public Location(String postalCode,double latitude, double longitude) {
+
+	public Location(String postalCode, double latitude, double longitude) {
 		super();
 		this.postalCode = postalCode;
-		this.latitude = latitude;
-		this.longitude = longitude;
+		this.lat = latitude;
+		this.lng = longitude;
 	}
 }
