@@ -255,7 +255,7 @@ public class Service {
 		List<Location> locations = database.selectLocations();
 		HashMap<String, Location> locationMap = new HashMap<>();
 		for (Location location : locations) {
-			String postalCode = StringUtils.substring(location.postalCode, 0, 4);
+			String postalCode = StringUtils.substring(location.postalCode, 0, 6);
 			location.postalCode = postalCode;
 			if (!locationMap.containsKey(location.postalCode)) {
 				locationMap.put(location.postalCode, location);
